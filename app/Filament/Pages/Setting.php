@@ -23,10 +23,6 @@ class Setting extends Page
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog';
     protected static string $view = 'filament.pages.setting';
-    public static function getNavigationGroup(): ?string
-    {
-        return trans('Configurations');
-    }
     public function getTitle(): string|Htmlable
     {
         return trans('Settings');

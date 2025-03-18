@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\NewsResource\Pages;
+namespace App\Filament\Resources\BlogResource\Pages;
 
-use App\Filament\Resources\NewsResource;
-use App\Models\NewsImage;
+use App\Filament\Resources\BlogResource;
+use App\Models\BlogImage;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
-class CreateNews extends CreateRecord
+class CreateBlog extends CreateRecord
 {
-    protected static string $resource = NewsResource::class;
+    protected static string $resource = BlogResource::class;
 
     protected function afterCreate(): void
     {
@@ -17,13 +17,12 @@ class CreateNews extends CreateRecord
             $images = [];
             foreach ($this->data['images'] as $image) {
                 $images[] = [
-                    'news_id' => $this->record->id,
+                    'blog_id' => $this->record->id,
                     'image' => $image,
                 ];
             }
 
-            NewsImage::insert($images);
+            BlogImage::insert($images);
         }
     }
-
 }

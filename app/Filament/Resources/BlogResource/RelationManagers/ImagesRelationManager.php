@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\NewsResource\RelationManagers;
+namespace App\Filament\Resources\BlogResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;

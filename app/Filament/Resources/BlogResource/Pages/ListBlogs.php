@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\NewsResource\Pages;
+namespace App\Filament\Resources\BlogResource\Pages;
 
-use App\Filament\Resources\NewsResource;
+use App\Filament\Resources\BlogResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListNews extends ListRecords
+class ListBlogs extends ListRecords
 {
-    protected static string $resource = NewsResource::class;
+    protected static string $resource = BlogResource::class;
 
     protected function getHeaderActions(): array
     {

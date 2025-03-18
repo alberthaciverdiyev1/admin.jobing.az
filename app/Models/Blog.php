@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class News extends Model
+class Blog extends Model
 {
     protected $table = 'news';
     protected $fillable = [
@@ -15,7 +15,7 @@ class News extends Model
 
     public function images()
     {
-        return $this->hasMany(NewsImage::class);
+        return $this->hasMany(BlogImage::class);
     }
 
     protected static function booted()

@@ -19,10 +19,6 @@ class SeoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    public static function getNavigationGroup(): ?string
-    {
-        return trans('Configurations');
-    }
     public static function getNavigationLabel(): string
     {
         return trans('SEO');

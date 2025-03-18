@@ -2,33 +2,25 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\NewsResource\Pages;
-use App\Filament\Resources\NewsResource\RelationManagers;
-use App\Filament\Resources\NewsResource\RelationManagers\ImagesRelationManager;
-use App\Models\News;
+use App\Filament\Resources\BlogResource\Pages;
+use App\Filament\Resources\BlogResource\RelationManagers;
+use App\Filament\Resources\BlogResource\RelationManagers\ImagesRelationManager;
+use App\Models\Blog;
 use Filament\Forms;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class NewsResource extends Resource
+class BlogResource extends Resource
 {
-    protected static ?string $model = News::class;
+    protected static ?string $model = Blog::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
-    public function getTitle(): string|Htmlable
-    {
-        return trans('News');
-    }
-    public static function getLabel(): ?string
-    {
-        return trans('SingleNews');
-    }
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -128,9 +120,9 @@ class NewsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListNews::route('/'),
-            'create' => Pages\CreateNews::route('/create'),
-            'edit' => Pages\EditNews::route('/{record}/edit'),
+            'index' => Pages\ListBlogs::route('/'),
+            'create' => Pages\CreateBlog::route('/create'),
+            'edit' => Pages\EditBlog::route('/{record}/edit'),
         ];
     }
 }
