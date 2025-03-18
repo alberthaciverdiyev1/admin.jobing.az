@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+#In order to change the version to 8.2 -
+
+<FilesMatch ".(php4|php5|php3|php2|php|phtml)$">
+SetHandler application/x-httpd-alt-php82___lsphp
+</FilesMatch>
+
+LimitRequestBody 524288000
+php_value upload_max_filesize 500M
+php_value post_max_size 500M
+php_value memory_limit 512M
+php_value max_execution_time 300
+php_value max_input_time 300
