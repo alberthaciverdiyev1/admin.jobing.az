@@ -20,7 +20,7 @@ class SettingSeeder extends Seeder
             'phone_number_1' => '+1 (800) 123-4567',
             'email' => 'info@example.com',
             'address' => '1234 Elm Street, Springfield, IL',
-            'google_map_location' => 'https://maps.google.com/?q=1234+Elm+Street,Springfield,IL',
+            'google_map_location' => 'https+Elm+Street,Springfield,IL',
             'instagram_url' => 'https://instagram.com',
             'facebook_url' => 'https://facebook.com',
             'logo' => null,
