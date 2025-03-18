@@ -29,16 +29,13 @@ class SeoResource extends Resource
     }
     public static function form(Form $form): Form
     {
-        $news = \App\Models\News::where('is_active', true)->pluck('az_title', 'slug')->toArray() ?? [];
-        $services = \App\Models\Service::where('is_active', true)->pluck('az_name', 'slug')->toArray() ?? [];
+        $blogs = \App\Models\Blog::where('is_active', true)->pluck('az_title', 'slug')->toArray() ?? [];
         $main_pages = [
             'home' => __('Home Page'),
-            'history' => __('History Page'),
-            'activity' => __('Activity Page'),
-            'documents' => __('Documents Page'),
-            'gallery' => __('Gallery Page'),
+            'aboutUs' => __('About Page'),
+            'vacancies' => __('Vacancies Page'),
             'contact' => __('Contact Us Page'),
-            'news' => __('News Page'),
+            'blog' => __('Blogs Page'),
         ];
 
         return $form
@@ -50,7 +47,7 @@ class SeoResource extends Resource
                 Forms\Components\TextInput::make('seo_keywords')
                     ->default(null),
                 Forms\Components\Select::make('seo_page')
-                    ->options(array_merge($main_pages, $news, $services))
+                    ->options(array_merge($main_pages, $blogs))
                     ->native(false)
                     ->required()
                     ->default(null),

@@ -17,11 +17,9 @@ class Seo extends Model
     protected static function booted()
     {
         static::saving(function ($seo) {
-            if (News::where('slug', $seo->seo_page)->exists()) {
-                $seo->seo_page_name = News::where('slug', $seo->seo_page)->value('az_title');
-            } elseif (Service::where('slug', $seo->seo_page)->exists()) {
-                $seo->seo_page_name = Service::where('slug', $seo->seo_page)->value('az_name');
-            } else {
+            if (Blog::where('slug', $seo->seo_page)->exists()) {
+                $seo->seo_page_name = Blog::where('slug', $seo->seo_page)->value('az_title');
+            }  else {
                 $main_pages = [
                     'home' => __('Home Page'),
                     'history' => __('History Page'),

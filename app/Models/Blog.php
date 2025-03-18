@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Blog extends Model
 {
-    protected $table = 'news';
+    protected $table = 'blogs';
     protected $fillable = [
         'slug', 'az_title', 'ru_title', 'en_title', 'is_active', 'az_content',
         'ru_content', 'en_content', 'main_image'

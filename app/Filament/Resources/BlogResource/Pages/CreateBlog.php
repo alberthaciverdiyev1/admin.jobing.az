@@ -21,7 +21,6 @@ class CreateBlog extends CreateRecord
                     'image' => $image,
                 ];
             }
-
             BlogImage::insert($images);
         }
     }
